@@ -19,6 +19,9 @@ apt-get install -y \
 	python-mysqldb \
 	redis-server
 
+composer self-update
+composer global require phing/phing
+
 curl $repo/nginx/default > /etc/nginx/sites-enabled/default
 curl $repo/nginx/nginx.conf > /etc/nginx/nginx.conf
 
