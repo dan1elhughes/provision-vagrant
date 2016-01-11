@@ -20,7 +20,7 @@ apt-get install -y \
 	redis-server
 
 composer self-update
-composer global require phing/phing
+composer global require phing/phing phpunit/phpunit
 
 curl $repo/nginx/default > /etc/nginx/sites-enabled/default
 curl $repo/nginx/nginx.conf > /etc/nginx/nginx.conf
