@@ -1,5 +1,7 @@
 #!/bin/bash
 
+repo="https://raw.githubusercontent.com/dan1elhughes/provision-vagrant/master"
+
 apt-get update > /dev/null
 
 add-apt-repository ppa:ondrej/php5-5.6 --yes
@@ -17,7 +19,7 @@ apt-get install -y \
 	python-mysqldb \
 	redis-server
 
-ln -sf /var/provision/nginx/default /etc/nginx/sites-enabled/default
-ln -sf /var/provision/nginx/nginx.conf /etc/nginx/nginx.conf
+curl $repo/nginx/default > /etc/nginx/sites-enabled/default
+curl $repo/nginx/nginx.conf > /etc/nginx/nginx.conf
 
 service nginx restart
