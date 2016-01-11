@@ -20,7 +20,9 @@ apt-get install -y \
 	redis-server
 
 composer self-update
-COMPOSER_HOME=/home/vagrant/.composer composer global require phing/phing
+sudo -u vagrant COMPOSER_HOME=/home/vagrant/.composer composer global require \
+	phing/phing \
+	squizlabs/php_codesniffer
 
 curl $repo/nginx/default > /etc/nginx/sites-enabled/default
 curl $repo/nginx/nginx.conf > /etc/nginx/nginx.conf
